@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            width:100vw;
+            height:100vh;
+            background-image:url("building.jpg");
+            background-size:cover;
+            background-position:center;
+        }
+        .overlay{
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,0.7);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+        }
+        h1{
+            color:white;
+            font-size:40px;
+            margin-bottom:10px;
+        }
+        h2{
+            color:white;
+            margin-bottom:30px;
+        }
+        .countdown{
+            display:flex;
+            gap:20px;
+        }
+        .box{
+            text-align:center;
+        }
+        .box input{
+            width:90px;
+            height:60px;
+            font-size:24px;
+            text-align:center;
+            border:none;
+            border-radius:6px;
+        }
+        .box label{
+            color:white;
+            display:block;
+            margin-top:8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="overlay">
+        <h1>We Are Coming Soon</h1>
+        <h2 id="end-date"></h2>
+
+        <div class="countdown">
+            <div class="box">
+                <input id="days" readonly>
+                <label>Days</label>
+            </div>
+            <div class="box">
+                <input id="hours" readonly>
+                <label>Hours</label>
+            </div>
+            <div class="box">
+                <input id="minutes" readonly>
+                <label>Minutes</label>
+            </div>
+            <div class="box">
+                <input id="seconds" readonly>
+                <label>Seconds</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script1.js"></script>
+</body>
+</html>
