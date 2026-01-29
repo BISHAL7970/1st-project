@@ -2,6 +2,14 @@
 $con=mysqli_connect("localhost","root","Bishal@12","crudoperation");
 $id=$_GET['updateid'];
 
+$sql="SELECT * FROM crud where id=$id";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+$name=$row['name'];
+$email=$row['email'];
+$mobile=$row['mobile'];
+$password=$row['password'];
+
 if(isset($_POST['sb'])){
 $name=$_POST['name'];
 $email=$_POST['email'];
@@ -29,13 +37,13 @@ if($execute){
     <form  method="post">
   <div class="mb-3">
     <label >Enter name</label>
-    <input type="text" class="form-control"placeholder="Enter your name" name="name" >
+    <input type="text" class="form-control"placeholder="Enter your name" name="name" value=<?php echo $name?> >
     <label >Enter email</label>
-    <input type="email" class="form-control"placeholder="Enter your email"  name="email">
+    <input type="email" class="form-control"placeholder="Enter your email"  name="email" value=<?php echo $email?>>
     <label >Enter mobile</label>
-    <input type="mobile" class="form-control"placeholder="Enter your mobile"  name="mobile">
+    <input type="mobile" class="form-control"placeholder="Enter your mobile"  name="mobile" value=<?php echo $mobile?>>
     <label >Enter password</label>
-    <input type="text" class="form-control"placeholder="Enter your password" name="password">
+    <input type="text" class="form-control"placeholder="Enter your password" name="password" value=<?php echo $password?>>
     <input class="btn btn-primary" type="submit" value="Update" name="sb">
     
     </form>
